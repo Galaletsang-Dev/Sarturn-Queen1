@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Saturn Return, My Queen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --space-dark: #0B0B1D;
+            --space-purple: #2D1B69;
+            --space-blue: #1E2A78;
+            --gold: #D4AF37;
+            --silver: #C0C0C0;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, var(--space-dark) 0%, var(--space-purple) 100%);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .poetic-title {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+        }
+
+        .elegant-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: var(--gold);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: var(--silver);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: var(--gold);
+            color: var(--space-dark);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
+        }
+
+        /* Floating Elements */
+        .floating {
+            position: absolute;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        .star {
+            width: 4px;
+            height: 4px;
+            background: var(--white);
+            border-radius: 50%;
+            box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+        }
+
+        .saturn {
+            font-size: 3rem;
+            color: var(--gold);
+            opacity: 0.7;
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.8rem;
+            color: var(--gold);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+
+        /* Message Section */
+        .message-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .message-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px;
+            background: rgba(11, 11, 29, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            font-size: 1.3rem;
+            line-height: 1.8;
+            position: relative;
+            z-index: 2;
+            border: 1px solid var(--gold);
+        }
+
+        .message-content p {
+            margin-bottom: 25px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* Photo Section */
+        .photo-section {
+            background: rgba(30, 42, 120, 0.3);
+        }
+
+        .photo-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .photo-frame {
+            width: 400px;
+            height: 500px;
+            border: 3px solid var(--gold);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            background: var(--space-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .photo-frame:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .photo-frame:hover img {
+            transform: scale(1.05);
+        }
+
+        .photo-frame .placeholder {
+            font-size: 4rem;
+            color: var(--gold);
+            opacity: 0.5;
+        }
+
+        .photo-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(11, 11, 29, 0.8);
+            color: var(--gold);
+            padding: 15px;
+            text-align: center;
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Countdown Section */
+        .countdown-section {
+            text-align: center;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: rgba(11, 11, 29, 0.7);
+            padding: 35px 20px;
+            border-radius: 15px;
+            min-width: 140px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--gold);
+        }
+
+        .countdown-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .countdown-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gold);
+        }
+
+        .countdown-number {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: var(--gold);
+            font-family: 'Cinzel', serif;
+        }
+
+        .countdown-label {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--silver);
+        }
+
+        /* Love Section */
+        .love-section {
+            background: rgba(45, 27, 105, 0.3);
+            text-align: center;
+        }
+
+        .love-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px;
+            background: rgba(11, 11, 29, 0.7);
+            border-radius: 15px;
+            border: 1px solid var(--gold);
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(11, 11, 29, 0.9);
+            color: var(--silver);
+            text-align: center;
+            padding: 50px 0;
+            border-top: 1px solid var(--gold);
+        }
+
+        footer p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: transparent;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+        }
+
+        .social-icon:hover {
+            background: var(--gold);
+            color: var(--space-dark);
+            transform: translateY(-5px);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.3;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .countdown {
+                gap: 15px;
+            }
+
+            .countdown-item {
+                min-width: 120px;
+                padding: 25px 15px;
+            }
+
+            .countdown-number {
+                font-size: 2.8rem;
+            }
+
+            .photo-frame {
+                width: 100%;
+                max-width: 400px;
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .countdown {
+                gap: 10px;
+            }
+
+            .countdown-item {
+                min-width: 100px;
+                padding: 20px 10px;
+            }
+
+            .countdown-number {
+                font-size: 2.2rem;
+            }
+
+            .message-content {
+                padding: 30px 20px;
+            }
+
+            .photo-container {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Stars -->
+        <div class="star floating" style="top: 10%; left: 5%;"></div>
+        <div class="star floating" style="top: 15%; right: 10%;"></div>
+        <div class="star floating" style="bottom: 20%; left: 15%;"></div>
+        <div class="star floating" style="bottom: 25%; right: 5%;"></div>
+        <div class="star floating" style="top: 30%; left: 20%;"></div>
+        
+        <!-- Saturn -->
+        <div class="saturn floating" style="top: 20%; right: 20%;">🪐</div>
+        
+        <div class="hero-content fade-in">
+            <h1 class="poetic-title">Happy Saturn Return</h1>
+            <p class="elegant-title">My Celestial Queen</p>
+            <p>Counting down to your special day this Sunday</p>
+            <button class="cta-button" id="startExperience">Our Cosmic Journey</button>
+        </div>
+    </section>
+
+    <!-- Message Section -->
+    <section class="message-section">
+        <div class="container">
+            <h2 class="section-title poetic-title fade-in">A Cosmic Message</h2>
+            <div class="message-content fade-in">
+                <p>The unbridled rage, of your roaring 20s has ceased.</p>
+                <p>Saturn's ringing is ringing in, a new Era of peace.</p>
+                <p>Saturn's rings are glistening, in the inky black night.</p>
+                <p>29 Years, circling back, to that mid 90s, early October morning light.</p>
+                <p>You opened your eyes Saturn entered our skies old familiar friends,</p>
+                <p>Star-crossed again.</p>
+                <br>
+                <p class="elegant-title">Happy Saturn Return Queen.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Section -->
+    <section class="photo-section">
+        <div class="container">
+            <h2 class="section-title poetic-title fade-in">My Cosmic Queen</h2>
+            <div class="photo-container">
+                <div class="photo-frame fade-in">
+                    <img src="Sarturn-Queen.jpg" alt="Beautiful Birthday Girl">
+                    <div class="photo-label">My Starlight</div>
+                </div>
+                <div class="photo-frame fade-in">
+                    <img src="Sarturn-Queen1.jpg">
+                    <div class="photo-label">My Celestial Beauty</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="countdown-section">
+        <div class="container">
+            <h2 class="section-title poetic-title fade-in">Countdown to Sunday</h2>
+            <div class="countdown">
+                <div class="countdown-item fade-in">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item fade-in">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item fade-in">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item fade-in">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Love Section -->
+    <section class="love-section">
+        <div class="container">
+            <h2 class="section-title poetic-title fade-in">Across the Cosmos</h2>
+            <div class="love-content fade-in">
+                <p>My Dearest Love,</p>
+                <br>
+                <p>As Saturn completes its orbit and returns to where it was when you were born,</p>
+                <p>I am reminded that some connections are written in the stars.</p>
+                <br>
+                <p>Our souls have traveled through lifetimes to find each other in this one,</p>
+                <p>And as you enter this new chapter of wisdom and maturity,</p>
+                <p>I promise to orbit you with the same constancy as Saturn's rings.</p>
+                <br>
+                <p>You are my celestial queen, my cosmic companion,</p>
+                <p>And I will love you across all space and time.</p>
+                <br>
+                <p>Forever Yours,</p>
+                <p class="elegant-title">Your Stargazer</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Made with stardust and love for my Saturn Queen</p>
+            <p>Celebrating your special day this Sunday</p>
+            
+            <div class="social-icons">
+                <div class="social-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="social-icon">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="social-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="social-icon">
+                    <i class="fas fa-ring"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer - Set to this Sunday
+        function updateCountdown() {
+            const now = new Date();
+            const dayOfWeek = now.getDay(); // 0 = Sunday, 1 = Monday, etc.
+            const daysUntilSunday = dayOfWeek === 0 ? 7 : 7 - dayOfWeek;
+            
+            const birthday = new Date();
+            birthday.setDate(now.getDate() + daysUntilSunday);
+            birthday.setHours(0, 0, 0, 0);
+            
+            const diff = birthday - now;
+            
+            // If it's already Sunday, show zeros
+            if (diff < 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Scroll animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Start Experience Button
+        document.getElementById('startExperience').addEventListener('click', function() {
+            // Create star effect
+            createStars();
+            
+            // Scroll to message section
+            document.querySelector('.message-section').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Create twinkling stars
+        function createStars() {
+            const starCount = 50;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.position = 'fixed';
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.width = (Math.random() * 3 + 1) + 'px';
+                star.style.height = star.style.width;
+                star.style.animation = `twinkle ${Math.random() * 3 + 2}s infinite ease-in-out`;
+                star.style.animationDelay = Math.random() * 5 + 's';
+                star.style.zIndex = '9999';
+                
+                document.body.appendChild(star);
+                
+                // Remove star after animation
+                setTimeout(() => {
+                    star.remove();
+                }, 10000);
+            }
+        }
+
+        // Add some initial stars
+        setTimeout(createStars, 1000);
+
+        // Function to replace images with your own
+        function replaceImages() {
+            // Replace these URLs with the actual image URLs of the birthday girl
+            const imageUrls = [
+                'YOUR_FIRST_IMAGE_URL_HERE',
+                'YOUR_SECOND_IMAGE_URL_HERE'
+            ];
+            
+            const photoFrames = document.querySelectorAll('.photo-frame');
+            photoFrames.forEach((frame, index) => {
+                if (index < imageUrls.length) {
+                    const img = frame.querySelector('img');
+                    img.src = imageUrls[index];
+                }
+            });
+        }
+
+        // Uncomment the line below and add your image URLs to replace the sample images
+        // replaceImages();
+    </script>
+</body>
+</html>
